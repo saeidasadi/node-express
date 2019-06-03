@@ -24,14 +24,12 @@ if (environment !== 'production') {
     app.use(logger('dev'));
 }
 
-app.use('/api/v1', (req, res, next) => {
-    res.send('Hello');
+const routes = require('./routes/index.js');
 
-    next();
-});
+app.use('/api/v1', routes(router));
 
 app.listen(stage.port, stage.host, () => {
-    console.log(`Server now listening at localhost:${stage.port}`);
+    console.log(`Server now listening at ${stage.host}:${stage.port}`);
 });
 
 module.exports = app;
