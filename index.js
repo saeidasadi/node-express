@@ -26,6 +26,14 @@ if (environment !== 'production') {
 
 const routes = require('./routes/index.js');
 
+app.all('/api/*', function (req, res, next) {
+    console.log('Using API');
+
+    // res.end();
+
+    next();
+});
+
 app.use('/api/v1', routes(router));
 
 app.listen(stage.port, stage.host, () => {

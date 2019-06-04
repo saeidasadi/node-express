@@ -3,8 +3,10 @@ module.exports = {
         res.send('UsersController@index');
     },
 
-    create: (req, res) => {
-        res.send('UsersController@create')
+    create: (req, res, next) => {
+        console.log('Api: Users@Create');
+
+        res.send('UsersController@create');
     },
 
     store: (req, res) => {
