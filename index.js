@@ -24,6 +24,10 @@ if (environment !== 'production') {
     app.use(logger('dev'));
 }
 
+app.set('view engine', 'pug');
+
+app.set('views', './views');
+
 const routes = require('./routes/index.js');
 
 app.all('/api/*', function (req, res, next) {
