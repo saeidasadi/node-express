@@ -14,4 +14,6 @@ module.exports = (router) => {
 
     router.route('/users/:id/edit')
         .get(controller.edit);
+
+    return router;
 };

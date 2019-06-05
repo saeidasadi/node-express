@@ -1,7 +1,9 @@
+const express = require('express');
+
+const router = express.Router();
+
 const users = require('./users');
 
-module.exports = (router) => {
-    users(router);
+router.use('/api/v1', users(router));
 
-    return router;
-};
+module.exports = router;

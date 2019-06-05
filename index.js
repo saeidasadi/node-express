@@ -34,7 +34,7 @@ app.all('/api/*', function (req, res, next) {
     next();
 });
 
-app.use('/api/v1', routes(router));
+app.use(routes);
 
 app.listen(stage.port, stage.host, () => {
     console.log(`Server now listening at ${stage.host}:${stage.port}`);
